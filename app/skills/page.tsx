@@ -71,7 +71,7 @@ export default function Skills() {
           <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-200 dark:border-slate-700">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Certifications</h3>
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-md transition">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-md transition">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white text-xl font-bold flex-shrink-0 shadow-md">
                   ✓
                 </div>
@@ -83,12 +83,12 @@ export default function Skills() {
                   href="https://learn.nvidia.com/certificates?id=kVXK2s9JQTe2C_SPJY2jOg" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg whitespace-nowrap"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg whitespace-nowrap text-center"
                 >
                   View Certificate
                 </a>
               </div>
-              <div className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-md transition">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900 rounded-lg hover:shadow-md transition">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white text-xl font-bold flex-shrink-0 shadow-md">
                   ✓
                 </div>
@@ -100,7 +100,7 @@ export default function Skills() {
                   href="https://www.credly.com/badges/82aeaf7b-d15f-4881-ab41-9135a1c3a012/public_url" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg whitespace-nowrap"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg whitespace-nowrap text-center"
                 >
                   View Certificate
                 </a>

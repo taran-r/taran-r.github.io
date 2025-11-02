@@ -43,7 +43,7 @@ export default function Projects() {
                     <img 
                       src="/uf-study-buddy.png" 
                       alt="UF Study Buddy" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
                         e.currentTarget.parentElement!.innerHTML = '<div class="text-center px-4">UF Study Buddy<br/>Screenshot</div>';
@@ -87,7 +87,7 @@ export default function Projects() {
                     <img 
                       src="/insighter-demo.png" 
                       alt="Insighter" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
                         e.currentTarget.parentElement!.innerHTML = '<div class="text-center px-4">Insighter<br/>Screenshot</div>';
