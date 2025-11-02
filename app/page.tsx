@@ -35,7 +35,7 @@ export default function Home() {
         <div className="mb-8 flex justify-center">
           <div className="w-48 h-48 rounded-full overflow-hidden shadow-2xl ring-4 ring-blue-500/30">
             <img 
-              src="/headshot.jpg" 
+              src="/Headshot.jpg" 
               alt="Taran Raj" 
               className="w-full h-full object-cover"
               onError={(e) => {
