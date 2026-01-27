@@ -35,50 +35,6 @@ export default function Projects() {
       <section className="py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-8">
-            {/* UF Study Buddy */}
-            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="md:w-1/3">
-                  <div className="w-full h-48 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center text-white text-lg font-semibold shadow-lg overflow-hidden">
-                    <img 
-                      src="/uf-study-buddy.png" 
-                      alt="UF Study Buddy" 
-                      className="w-full h-full object-contain"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.parentElement!.innerHTML = '<div class="text-center px-4">UF Study Buddy<br/>Screenshot</div>';
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="md:w-2/3">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                      UF Study Buddy
-                    </h3>
-                    <a 
-                      href="https://github.com/taran-r/uf-study-buddy" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                      aria-label="View UF Study Buddy on GitHub"
-                    >
-                      <GitHubIcon />
-                    </a>
-                  </div>
-                  <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
-                    The UF Study Buddy helps University of Florida students quickly find course information by using AI to answer questions based on actual UF syllabi. Instead of digging through PDFs for dates, policies, or grading breakdowns, students simply select their course and ask questions to get instant, AI-powered answers.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">Flask (Python)</span>
-                    <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">HTML</span>
-                    <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">CSS</span>
-                    <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">JavaScript</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Insighter */}
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
               <div className="flex flex-col md:flex-row gap-8">
@@ -87,7 +43,7 @@ export default function Projects() {
                     <img 
                       src="/insighter-demo.png" 
                       alt="Insighter" 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
                         e.currentTarget.parentElement!.innerHTML = '<div class="text-center px-4">Insighter<br/>Screenshot</div>';
@@ -131,6 +87,94 @@ export default function Projects() {
               </div>
             </div>
 
+            {/* (L)Earning */}
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
+              <div className="flex flex-col md:flex-row gap-8">
+                <div className="md:w-1/3">
+                  <div className="w-full h-48 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-xl flex items-center justify-center text-white text-lg font-semibold shadow-lg overflow-hidden">
+                    <img 
+                      src="/(L)earning dash.png" 
+                      alt="(L)Earning" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = '<div class="text-center px-4">(L)Earning<br/>Screenshot</div>';
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="md:w-2/3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                      (L)Earning
+                    </h3>
+                    <a 
+                      href="https://github.com/taran-r/-L-Earning" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+                      aria-label="View (L)Earning on GitHub"
+                    >
+                      <GitHubIcon />
+                    </a>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
+                    (L)Earning is an educational fintech platform that helps students and travelers understand why transportation and travel spending adds up, not just how much was spent. Rather than simply showing raw totals, it analyzes transaction data to reveal hidden fees, convenience tradeoffs, and spending patterns, then uses AI to explain these behaviors. (L)Earning makes financial literacy more accessible without relying on rigid budgets or prescriptive advice.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 rounded-full text-sm font-medium">FastAPI (Python)</span>
+                    <span className="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 rounded-full text-sm font-medium">Next.js (TypeScript)</span>
+                    <span className="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 rounded-full text-sm font-medium">React</span>
+                    <span className="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 rounded-full text-sm font-medium">Node.js</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* UF Study Buddy */}
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
+              <div className="flex flex-col md:flex-row gap-8">
+                <div className="md:w-1/3">
+                  <div className="w-full h-48 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center text-white text-lg font-semibold shadow-lg overflow-hidden">
+                    <img 
+                      src="/uf-study-buddy.png" 
+                      alt="UF Study Buddy" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = '<div class="text-center px-4">UF Study Buddy<br/>Screenshot</div>';
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="md:w-2/3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                      UF Study Buddy
+                    </h3>
+                    <a 
+                      href="https://github.com/taran-r/uf-study-buddy" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+                      aria-label="View UF Study Buddy on GitHub"
+                    >
+                      <GitHubIcon />
+                    </a>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
+                    The UF Study Buddy helps University of Florida students quickly find course information by using AI to answer questions based on actual UF syllabi. Instead of digging through PDFs for dates, policies, or grading breakdowns, students simply select their course and ask questions to get instant, AI-powered answers.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">Flask (Python)</span>
+                    <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">HTML</span>
+                    <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">CSS</span>
+                    <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">JavaScript</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Portfolio Website */}
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
               <div className="flex flex-col md:flex-row gap-8">
@@ -166,10 +210,9 @@ export default function Projects() {
                     A modern, responsive portfolio website built to showcase my projects, experience, and skills. Features a clean design with smooth animations and dark mode support for an optimal viewing experience.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-4 py-2 bg-cyan-100 dark:bg-cyan-900/50 text-cyan-800 dark:text-cyan-200 rounded-full text-sm font-medium">Next.js</span>
+                    <span className="px-4 py-2 bg-cyan-100 dark:bg-cyan-900/50 text-cyan-800 dark:text-cyan-200 rounded-full text-sm font-medium">Next.js (TypeScript)</span>
                     <span className="px-4 py-2 bg-cyan-100 dark:bg-cyan-900/50 text-cyan-800 dark:text-cyan-200 rounded-full text-sm font-medium">React</span>
                     <span className="px-4 py-2 bg-cyan-100 dark:bg-cyan-900/50 text-cyan-800 dark:text-cyan-200 rounded-full text-sm font-medium">Tailwind CSS</span>
-                    <span className="px-4 py-2 bg-cyan-100 dark:bg-cyan-900/50 text-cyan-800 dark:text-cyan-200 rounded-full text-sm font-medium">TypeScript</span>
                   </div>
                 </div>
               </div>
