@@ -29,14 +29,14 @@ export default function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]/80 backdrop-blur-xl">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-center">
-        <div className="flex gap-8">
+        <div className="flex gap-5 sm:gap-8">
           {links.map(({ href, label }) => {
             const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
             return (
               <Link
                 key={href}
                 href={href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-base sm:text-lg font-medium py-1 px-1 transition-colors ${
                   isActive 
                     ? 'text-[var(--accent-cyan)]' 
                     : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'

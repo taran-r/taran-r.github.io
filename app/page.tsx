@@ -30,13 +30,32 @@ export default function Home() {
       <ShaderGradientBg color1="#0a0a0a" color2="#7dd3fc" color3="#0c4a6e" />
       {/* Hero */}
       <section className="relative min-h-[calc(100vh-5rem)] flex flex-col lg:flex-row items-center justify-between gap-12 px-6 py-20 lg:px-16 lg:py-28 max-w-7xl mx-auto overflow-hidden">
-        <div className="relative z-10 flex-1 max-w-2xl">
+        <div className="relative z-10 flex-1 max-w-2xl w-full">
           <p className="font-mono text-sm text-accent-cyan mb-4 tracking-wider">// Hi, I&apos;m</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
             <span className="text-accent-cyan">
               Taran Raj
             </span>
           </h1>
+
+          {/* Mobile headshot — between name and description */}
+          <div className="flex justify-center lg:hidden my-8">
+            <div className="relative w-48 h-48 rounded-full p-1.5 ring-2 ring-accent-cyan/60">
+              {headshotError ? (
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-accent-cyan/30 to-accent-violet/30 flex items-center justify-center font-bold text-4xl text-accent-cyan">
+                  TR
+                </div>
+              ) : (
+                <img
+                  src="/Headshot.jpg"
+                  alt="Taran Raj"
+                  className="w-full h-full rounded-full object-cover"
+                  onError={() => setHeadshotError(true)}
+                />
+              )}
+            </div>
+          </div>
+
           <p className="text-base md:text-lg text-zinc-300 mb-10 leading-relaxed rounded-2xl bg-zinc-800/70 border border-zinc-700/50 px-5 py-4 backdrop-blur-sm">
             Computer science student at University of Florida with interests in machine learning, cybersecurity, and creating secure and efficient systems. Reach out:{' '}
             <a href="mailto:tarankraj@outlook.com" className="text-accent-cyan hover:underline underline-offset-2">
@@ -88,11 +107,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 flex-shrink-0">
+        {/* Desktop headshot — right column */}
+        <div className="relative z-10 flex-shrink-0 hidden lg:block">
           <div className="relative">
-            <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full p-1.5 ring-2 ring-accent-cyan/60">
+            <div className="relative w-72 h-72 rounded-full p-1.5 ring-2 ring-accent-cyan/60">
               {headshotError ? (
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-accent-cyan/30 to-accent-violet/30 flex items-center justify-center font-bold text-4xl md:text-5xl text-accent-cyan">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-accent-cyan/30 to-accent-violet/30 flex items-center justify-center font-bold text-5xl text-accent-cyan">
                   TR
                 </div>
               ) : (
