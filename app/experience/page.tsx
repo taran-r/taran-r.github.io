@@ -1,101 +1,129 @@
 'use client';
 
 import Link from 'next/link';
+import ShaderGradientBg from '../components/ShaderGradientBg';
 
-const ArrowLeftIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
-  </svg>
-);
+const experiences = [
+  {
+    role: 'Research Assistant',
+    org: 'University of Florida',
+    period: 'Aug 2025 - Present',
+    bullets: [
+      'Conducted a literature review on natural language to logic translation methods, synthesizing findings into a technical report that supported ongoing research efforts within Dr. Sumit Jha\'s group.',
+      'Benchmarked LLM outputs across a 28K-pair NL2TL dataset, grading translation quality across multiple model configurations and producing progress metrics that guided model and benchmark refinement.',
+      'Developed a multimodal NL+Vision-to-LTL benchmark with 200 datapoints, evaluating multiple LLMs on logical equivalence and identifying recurring, systematic failures in temporal logic generation.',
+    ],
+  },
+  {
+    role: 'AI Engineering Intern',
+    org: 'Universal Creative',
+    period: 'Jun 2026 - Aug 2026',
+    bullets: [
+      'Engineered improvements to an end-to-end Gaussian Splatting pipeline, processing aerial and handheld imagery through data preparation, geometric mapping, and training workflows to improve 3D environment quality.',
+      'Prototyped a conversational construction coordination workflow using an enterprise visual-intelligence platform with a Microsoft Teams Bot proof-of-concept for project-based reporting and ticket management.',
+      'Evaluated Python application infrastructure by building a custom application within a standardized platform ecosystem, documenting onboarding friction and gaps in developer documentation.',
+    ],
+  },
+  {
+    role: 'Research Intern',
+    org: 'Augusta University',
+    period: 'Jun 2025 - Dec 2025',
+    bullets: [
+      'Collaborated with Dr. Yuyan Bao and PhD student Shichen Gao to integrate Knowledge Graph and LLM techniques while applying discrete mathematics to prepare the system for 1,000+ complex user prompts.',
+      'Assisted in multiple instance learning experiments, contributing to early results that demonstrated up to a 12% improvement in recommendation precision across initial testing scenarios and datasets.',
+    ],
+  },
+  {
+    role: 'AI Engineering Intern',
+    org: 'SmartStickies',
+    period: 'Sep 2024 - Nov 2024',
+    bullets: [
+      'Researched three transformer architectures and LSTM variants using 20K+ open-source interaction records, building predictive models that supported adaptive interface testing across multiple user scenarios.',
+      'Designed and tested a Workflow Generator Tool that dynamically adjusted screen layouts, tested across three businesses, and integrated into production trials serving 100+ end users.',
+    ],
+  },
+];
+
+const involvement = [
+  {
+    org: 'UF Computing Student Union',
+    role: 'Software Developer',
+    period: 'Oct 2025 - Present',
+  },
+  {
+    org: 'UF Society of Asian Scientists & Engineers',
+    role: 'SASEHacks Workshop Committee',
+    period: 'Oct 2025 - Mar 2026',
+  },
+];
 
 export default function Experience() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-      {/* Header */}
-      <div className="pt-12 pb-8 px-6">
-        <div className="max-w-6xl mx-auto">
-          <Link href="/" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition font-medium mb-6">
-            <ArrowLeftIcon />
-            Back to Home
-          </Link>
-          <h1 className="text-5xl font-bold mb-3">
-            <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">Experience</span>
-          </h1>
-          <p className="text-slate-600 dark:text-slate-400 text-lg">My professional journey</p>
+    <main className="min-h-screen bg-grid-pattern pt-24 pb-20 relative">
+      <ShaderGradientBg color1="#0a0a0a" color2="#86efac" color3="#4ade80" />
+      <div className="max-w-4xl mx-auto px-6">
+        <Link href="/" className="inline-flex items-center gap-2 text-zinc-500 hover:text-accent-cyan transition-colors text-sm font-medium mb-8">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
+          </svg>
+          Back
+        </Link>
+        <h1 className="text-4xl md:text-5xl font-bold mb-2">
+          <span className="text-[#86efac]">Experience</span>
+        </h1>
+        <p className="text-zinc-500 mb-16">Professional work</p>
+
+        <div className="space-y-8">
+          {experiences.map((exp) => (
+            <article
+              key={`${exp.org}-${exp.role}`}
+              className="rounded-2xl p-6 lg:p-8 bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[#86efac]/30 transition-all duration-300"
+            >
+              <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div>
+                  <h2 className="text-xl font-bold text-white">{exp.role}</h2>
+                  <p className="text-accent-cyan font-medium">{exp.org}</p>
+                </div>
+                <span className="text-zinc-500 text-sm font-mono">
+                  {exp.period}
+                </span>
+              </div>
+              <ul className="space-y-2">
+                {exp.bullets.map((b) => (
+                  <li key={b} className="flex gap-3 text-zinc-400 leading-relaxed">
+                    <span className="text-[#86efac]/70 mt-1.5 shrink-0">▹</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
+
+        <section className="mt-20">
+          <h2 className="text-2xl font-bold text-white mb-2">School Involvement</h2>
+          <p className="text-zinc-500 mb-8 text-sm">Campus organizations</p>
+          <div className="space-y-4">
+            {involvement.map((item) => (
+              <div
+                key={item.org}
+                className="rounded-xl px-5 py-4 bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[#86efac]/30 transition-all duration-300"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <h3 className="text-base font-semibold text-white">{item.role}</h3>
+                    <p className="text-accent-cyan/80 text-sm">{item.org}</p>
+                  </div>
+                  <span className="text-zinc-500 text-sm font-mono">{item.period}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
 
-      {/* Experience Section */}
-      <section className="py-12 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="space-y-8">
-            {/* University of Florida */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-blue-500">
-              <div className="flex justify-between items-start mb-4 flex-wrap gap-2">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Research Assistant</h3>
-                  <p className="text-lg text-blue-600 dark:text-blue-400 font-medium">University of Florida</p>
-                </div>
-                <span className="text-slate-600 dark:text-slate-400 font-semibold bg-slate-100 dark:bg-slate-700 px-4 py-1 rounded-full">Aug 2025 - Present</span>
-              </div>
-              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
-                <li>Conducting a literature review on natural language to logic translation methods, synthesizing findings into a technical report shared with Dr. Sumit Jha's group.</li>
-                <li>Benchmarking outputs from a 28K-pair NL2TL dataset utilizing LLM-based approaches, producing progress metrics that inform model refinement.</li>
-                <li>Developing a baseline NL2TL translation system with LLMs, expected to increase the accuracy of temporal logic generation in preliminary testing by 15–20%.</li>
-              </ul>
-            </div>
-
-            {/* Augusta University */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-blue-500">
-              <div className="flex justify-between items-start mb-4 flex-wrap gap-2">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Research Intern</h3>
-                  <p className="text-lg text-blue-600 dark:text-blue-400 font-medium">Augusta University</p>
-                </div>
-                <span className="text-slate-600 dark:text-slate-400 font-semibold bg-slate-100 dark:bg-slate-700 px-4 py-1 rounded-full">Jun 2025 - Present</span>
-              </div>
-              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
-                <li>Collaborating with Dr. Yuyan Bao and PhD student Shichen Gao to integrate Knowledge Graph and LLM techniques while applying discrete mathematics principles, enhancing system accuracy, and preparing it to handle 1,000+ complex user-generated prompts.</li>
-                <li>Assisting in multiple instance learning experiments, contributing to early results that showed up to a 12% improvement in recommendation precision.</li>
-              </ul>
-            </div>
-
-            {/* SmartStickies */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-blue-500">
-              <div className="flex justify-between items-start mb-4 flex-wrap gap-2">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">AI Engineering Intern</h3>
-                  <p className="text-lg text-blue-600 dark:text-blue-400 font-medium">SmartStickies</p>
-                </div>
-                <span className="text-slate-600 dark:text-slate-400 font-semibold bg-slate-100 dark:bg-slate-700 px-4 py-1 rounded-full">Sep 2024 - Nov 2024</span>
-              </div>
-              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
-                <li>Researched three transformer architectures and LSTM variants using 20K+ open-source interaction records, building predictive models that supported adaptive interface testing across multiple user scenarios.</li>
-                <li>Designed and tested a Workflow Generator Tool that dynamically adjusted screen layouts, tested across three businesses, and integrated into production trials serving 100+ end users.</li>
-              </ul>
-            </div>
-
-            {/* Pinnacle Full-Stack */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-blue-500">
-              <div className="flex justify-between items-start mb-4 flex-wrap gap-2">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Python Programming Intern</h3>
-                  <p className="text-lg text-blue-600 dark:text-blue-400 font-medium">Pinnacle Full-Stack</p>
-                </div>
-                <span className="text-slate-600 dark:text-slate-400 font-semibold bg-slate-100 dark:bg-slate-700 px-4 py-1 rounded-full">Aug 2024 - Sep 2024</span>
-              </div>
-              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
-                <li>Built three customizable Python applications through Tkinter, including a password generator, a weather forecast tool using the OpenWeatherMap API, and a translator app leveraging the GoogleTrans library.</li>
-                <li>Streamlined API data handling and virtual environment setup, cutting average API response latency by 200ms and improving reliability during local testing in VS Code.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-8 px-6 bg-slate-900 dark:bg-black text-white text-center">
-        <p className="text-slate-300">© 2025 Taran Raj. All rights reserved.</p>
+      <footer className="mt-20 py-8 text-center text-zinc-600 text-sm border-t border-[var(--border-subtle)]">
+        © 2026 Taran Raj
       </footer>
     </main>
   );
