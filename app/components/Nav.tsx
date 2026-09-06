@@ -28,7 +28,7 @@ export default function Nav() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]/80 backdrop-blur-xl">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-end">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-center">
         <div className="flex gap-8">
           {links.map(({ href, label }) => {
             const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
