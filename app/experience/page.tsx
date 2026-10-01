@@ -5,16 +5,6 @@ import ShaderGradientBg from '../components/ShaderGradientBg';
 
 const experiences = [
   {
-    role: 'Research Assistant',
-    org: 'University of Florida',
-    period: 'Aug 2025 - Present',
-    bullets: [
-      'Conducted a literature review on natural language to logic translation methods, synthesizing findings into a technical report that supported ongoing research efforts within Dr. Sumit Jha\'s group.',
-      'Benchmarked LLM outputs across a 28K-pair NL2TL dataset, grading translation quality across multiple model configurations and producing progress metrics that guided model and benchmark refinement.',
-      'Developed a multimodal NL+Vision-to-LTL benchmark with 200 datapoints, evaluating multiple LLMs on logical equivalence and identifying recurring, systematic failures in temporal logic generation.',
-    ],
-  },
-  {
     role: 'AI Engineering Intern',
     org: 'Universal Creative',
     period: 'Jun 2026 - Aug 2026',
@@ -22,6 +12,16 @@ const experiences = [
       'Engineered improvements to an end-to-end Gaussian Splatting pipeline, processing aerial and handheld imagery through data preparation, geometric mapping, and training workflows to improve 3D environment quality.',
       'Prototyped a conversational construction coordination workflow using an enterprise visual-intelligence platform with a Microsoft Teams Bot proof-of-concept for project-based reporting and ticket management.',
       'Evaluated Python application infrastructure by building a custom application within a standardized platform ecosystem, documenting onboarding friction and gaps in developer documentation.',
+    ],
+  },
+  {
+    role: 'Research Assistant',
+    org: 'University of Florida',
+    period: 'Aug 2025 - Present',
+    bullets: [
+      'Conducted a literature review on natural language to logic translation methods, synthesizing findings into a technical report that supported ongoing research efforts within Dr. Sumit Jha\'s group.',
+      'Benchmarked LLM outputs across a 28K-pair NL2TL dataset, grading translation quality across multiple model configurations and producing progress metrics that guided model and benchmark refinement.',
+      'Developed a multimodal NL+Vision-to-LTL benchmark with 200 datapoints, evaluating multiple LLMs on logical equivalence and identifying recurring, systematic failures in temporal logic generation.',
     ],
   },
   {
@@ -47,13 +47,16 @@ const experiences = [
 const involvement = [
   {
     org: 'UF Computing Student Union',
-    role: 'Software Developer',
-    period: 'Oct 2025 - Present',
+    roles: [
+      { role: 'Software Developer', period: 'Oct 2025 - Present' },
+    ],
   },
   {
     org: 'UF Society of Asian Scientists & Engineers',
-    role: 'SASEHacks Workshop Committee',
-    period: 'Oct 2025 - Mar 2026',
+    roles: [
+      { role: 'SASEHacks Workshops Coordinator', period: 'Sep 2026 - Present' },
+      { role: 'SASEHacks Workshop Committee', period: 'Oct 2025 - Mar 2026' },
+    ],
   },
 ];
 
@@ -109,12 +112,17 @@ export default function Experience() {
                 key={item.org}
                 className="rounded-xl px-5 py-4 bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[#86efac]/30 transition-all duration-300"
               >
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div>
-                    <h3 className="text-base font-semibold text-white">{item.role}</h3>
-                    <p className="text-accent-cyan/80 text-sm">{item.org}</p>
-                  </div>
-                  <span className="text-zinc-500 text-sm font-mono">{item.period}</span>
+                <h3 className="text-base font-bold text-accent-cyan mb-2">{item.org}</h3>
+                <div className="space-y-1.5">
+                  {item.roles.map((entry) => (
+                    <div
+                      key={`${entry.role}-${entry.period}`}
+                      className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5"
+                    >
+                      <h4 className="text-base font-semibold text-white">{entry.role}</h4>
+                      <span className="text-zinc-500 text-sm font-mono text-right ml-auto">{entry.period}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
