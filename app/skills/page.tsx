@@ -7,6 +7,7 @@ const languages = ['Python', 'Java', 'C++', 'JavaScript', 'TypeScript', 'React',
 const tools = ['Git', 'GitHub', 'Azure', 'GCP', 'Docker', 'Linux', 'Unix Shell', 'Jupyter Notebook', 'REST APIs', 'LLM APIs', 'VS Code', 'PostgreSQL', 'Firebase', 'MongoDB', 'GitHub Actions', 'PyTorch', 'NumPy', 'Pandas', 'Parallel Computing', 'Transformer Models'];
 
 const certs = [
+  { name: 'NVIDIA Building Transformer-Based Natural Language Processing Applications', year: '2026', url: 'https://learn.nvidia.com/certificates?id=VhGNysNTRICRfVL2oMMBIw' },
   { name: 'NVIDIA Deep Learning Fundamentals', year: '2025', url: 'https://learn.nvidia.com/certificates?id=kVXK2s9JQTe2C_SPJY2jOg' },
   { name: 'University of Florida Python for AI', year: '2025', url: 'https://www.credly.com/badges/82aeaf7b-d15f-4881-ab41-9135a1c3a012/public_url' },
 ];
